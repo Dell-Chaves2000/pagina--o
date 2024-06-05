@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: rgb(113, 218, 250);
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(6px + 2vmin);
+  color: rgb(0, 5, 5);
+}
+
+table {
+  width: 90%;
+  grid-row: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding:3px;
+}
+
+th {
+  background-color: rgb(113, 218, 250);
+  color: rgb(0, 2, 3);
+}
+
+tbody tr:hover {
+  background-color: rgb(113, 218, 250);
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.page-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.page-button:disabled {
+  background-color: #ddd;
+  color: #999;
+}
+
+.active {
+  background-color: #053970;
+}
+

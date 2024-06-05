@@ -1,0 +1,62 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, 'Times New Roman', Times, serif, sans-serif;
+  line-height: 1.5;
+  font-weight: 200;
+  color-scheme:  initial;
+  color: rgba(19, 1, 1, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-header {
+  background-color:rgb(113, 218, 250);
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 32px;
+  border: 1px solid transparent;
+  padding: 0.6em 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: inherit;
+  font: bold;
+  background-color: #4667fa;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
