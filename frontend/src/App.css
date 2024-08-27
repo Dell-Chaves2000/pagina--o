@@ -39,15 +39,20 @@ tbody tr:hover {
 .page-button {
   background-color: #4CAF50;
   color: white;
-  padding: 8px 16px;
+  padding: 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 8px 2px;
+  margin: 3px;
   cursor: pointer;
   border-radius: 5px;
   border: none;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .page-button:disabled {

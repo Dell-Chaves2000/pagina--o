@@ -29,7 +29,6 @@ function App() {
   async function getLivros(page: number) {
     try {
       const response = await fetch(`http://localhost:3001/livros/${page}`);
-      console.log(response)
       if (response.ok) {
         const data = await response.json();
         setLivros(data);
@@ -66,14 +65,17 @@ function App() {
   }
 
   function renderPageNumbers() {
-    const totalPagesToShow = Math.min(pageTotal, 7);
     const pageNumbers = [];
-    const startPage = Math.max(1, page - Math.floor(totalPagesToShow / 2));
-    const endPage = Math.min(pageTotal, startPage + totalPagesToShow - 1);
+    const startPage = Math.max(1, page -3);
+    const endPage = Math.min(pageTotal, page + 3);
 
     for (let i = startPage; i <= endPage; i++) {
       pageNumbers.push(
-        <button key={i} onClick={() => handlePage(i)} style={{ backgroundColor: i === page ? 'blue' : '' }}>
+        <button key={i} 
+        className={`page-button ${i === page ? 'active': ""}`}
+        onClick={() => handlePage(i)}
+        disabled={i=== page}
+        >
           {i}
         </button>
       );
@@ -105,7 +107,7 @@ function App() {
                 <td>{livro.isbn}</td>
                 <td>{livro.paginas}</td>
                 <td>{livro.ano}</td>
-                <td>{livro.valor}</td>
+                <td>{livro.valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
               </tr>
             ))}
           </tbody>
@@ -116,11 +118,11 @@ function App() {
               Exibindo de {((page - 1) * 10) + 1} até {(page * 10 > amount) ? amount : (page * 10)} de {amount} livros
             </div>
           )}
-          <button disabled={page <= 1} onClick={() => setPage(1)}>{'<<'}</button>
-          <button disabled={page <= 1} onClick={() => setPage(page - 1)}>{'<'}</button>
+          <button className="page-button" disabled={page <= 1} onClick={() => setPage(1)}>{'<<'}</button>
+          <button className="page-button" disabled={page <= 1} onClick={() => setPage(page - 1)}>{'<'}</button>
           {renderPageNumbers()}
-          <button disabled={page >= pageTotal} onClick={() => setPage(page + 1)}>{'>'}</button>
-          <button disabled={page >= pageTotal} onClick={() => setPage(pageTotal)}>{'>>'}</button>
+          <button className="page-button" disabled={page >= pageTotal} onClick={() => setPage(page + 1)}>{'>'}</button>
+          <button className="page-button" disabled={page >= pageTotal} onClick={() => setPage(pageTotal)}>{'>>'}</button>
         </div>
       </header>
     </div>
